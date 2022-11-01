@@ -12,7 +12,12 @@ const UserSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      // TODO: ADD EMAIL MATCHING VALIDATOR
+      validate: {
+        validator: function(v) {
+          return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+        },
+        message: props => `${props.value} is not a valid email!`
+      },
     },
     thoughts: [
       {
@@ -29,8 +34,7 @@ const UserSchema = new Schema(
   },
   {
     toJSON: {
-      virtuals: true,
-      getters: false // FIXME: can we remove this?
+      virtuals: true
     },
     id: false
   }

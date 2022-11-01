@@ -1,6 +1,8 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
+// schema only, not a model - used as the reactions field's
+// subdocument schema in the Thought model
 const ReactionSchema = new Schema(
   {
     // set custom id to avoid confusion with parent thought's _id field
@@ -46,7 +48,8 @@ const ThoughtSchema = new Schema(
     username: {
       type: String,
       required: true,
-      // FIXME: (The user that created this thought) - how to link that w user!!??
+      // (The user that created this thought) - in this project,
+      // have them directly input their username in insomnia
     },
     reaction: [ReactionSchema]
   },
@@ -56,6 +59,7 @@ const ThoughtSchema = new Schema(
       getters: true
     },
     id: false
+    // ReactionSchema does not use `id: false` bc we are making its own id
   }
 );
 
