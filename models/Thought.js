@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 // schema only, not a model - used as the reactions field's
@@ -65,7 +65,7 @@ const ThoughtSchema = new Schema(
 
 // get total count of reactions on retrieval
 ThoughtSchema.virtual('reactionCount').get(function() {
-  return this.reactions.length;
+  return this.reaction.length;
 });
 
 const Thought = model('Thought', ThoughtSchema);

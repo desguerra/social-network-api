@@ -92,7 +92,7 @@ const userController = {
       .catch((err) => res.status(400).json(err));
   },
 
-  // DELETE to remove a friend from a user's friend list
+  // FIXME: DELETE to remove a friend from a user's friend list
   removeFriend({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.userId },
