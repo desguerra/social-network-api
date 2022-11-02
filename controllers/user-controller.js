@@ -75,11 +75,11 @@ const userController = {
 
   // TODO: BONUS - REMOVE USER'S ASSOCIATED THOUGHTS WHEN DELETED
 
-  // FIXME: POST to add a new friend to a user's friend list
-  addFriend({ body }, res) {
+  // POST to add a new friend to a user's friend list
+  addFriend({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.userId },
-      { $push: { friends: body } },
+      { $push: { friends: params.friendId } },
       { new: true }
     )
       .then((dbUserData) =>{
@@ -92,7 +92,7 @@ const userController = {
       .catch((err) => res.status(400).json(err));
   },
 
-  // FIXME: DELETE to remove a friend from a user's friend list
+  // DELETE to remove a friend from a user's friend list
   removeFriend({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.userId },
