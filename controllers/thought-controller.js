@@ -97,7 +97,7 @@ const thoughtController = {
       .catch(err => res.json(err));
   },
 
-  // FIXME: DELETE to pull and remove a reaction by the reaction's reactionId value
+  // DELETE to pull and remove a reaction by the reaction's reactionId value
   removeReaction({ params }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
