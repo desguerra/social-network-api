@@ -1,4 +1,4 @@
-# Module #18 Challenge: 
+# Module #18 Challenge: Social Network API
 
 ## Description
 
