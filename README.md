@@ -15,6 +15,7 @@ This project is an **API for a social network web application** where users can 
 
 * [Installation](#installation)
 * [Usage](#usage)
+* [Screenshots](#screenshots)
 * [Questions](#questions)
 
 
@@ -33,6 +34,90 @@ In the root directory of the project, run the following command to start a serie
 npm start
 ```
 
+### User Endpoints
+
+FIND all users
+```
+GET: http://localhost:3001/api/users
+```
+
+FIND user by ID
+```
+GET: http://localhost:3001/api/users/<userID>
+```
+
+CREATE user
+```
+POST: http://localhost:3001/api/users
+```
+
+UPDATE user
+```
+PUT: http://localhost:3001/api/users/<userID>
+```
+
+DELETE user
+```
+DELETE: http://localhost:3001/api/users/<userID>
+```
+
+### Friend Endpoints
+
+ADD friend
+```
+POST: http://localhost:3001/api/users/<userID>/friends/<friendID>
+```
+
+DELETE friend
+```
+DELETE: http://localhost:3001/api/users/<userID>/friends/<friendID>
+```
+
+### Thought Endpoints
+
+FIND all thoughts
+```
+GET: http://localhost:3001/api/thoughts
+```
+
+FIND thought by ID
+```
+GET: http://localhost:3001/api/thoughts/thoughtID>
+```
+
+CREATE thought
+```
+POST: http://localhost:3001/api/thoughts
+```
+
+UPDATE thought
+```
+PUT: http://localhost:3001/api/thoughts/<thoughtID>
+```
+
+DELETE thought
+```
+DELETE: http://localhost:3001/api/thoughts/<thoughtID>
+```
+
+### Reaction Endpoints
+
+ADD reaction
+```
+POST: http://localhost:3001/api/thoughts/<thoughtID>/reactions/<reactionID>
+```
+
+DELETE reaction
+```
+DELETE: http://localhost:3001/api/thoughts/<thoughtID>/reactions/<reactionID>
+```
+
+
+## Screenshots
+
+![screenshot 1 of project](assets/SS1.PNG)
+
+![screenshot 2 of project](assets/SS2.PNG)
 
 ## Questions
 
